@@ -8,4 +8,6 @@ import br.com.logap.eolica.domain.ComplexoEolico;
 @Repository
 public interface ComplexoEolicoDAO extends JpaRepository<ComplexoEolico, Long>{
 
+	ComplexoEolico findByIdentificador(String identificador);
+	
 }
