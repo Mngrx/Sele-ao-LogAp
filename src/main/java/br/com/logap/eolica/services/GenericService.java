@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 
+import br.com.logap.eolica.dao.GenericDAO;
+import br.com.logap.eolica.domain.GenericEntity;
 import br.com.logap.eolica.exceptions.FaltandoValoresException;
 import br.com.logap.eolica.exceptions.IdInvalidoException;
 
-public abstract class GenericService<T, R extends JpaRepository<T, Long>> {
+public abstract class GenericService<T extends GenericEntity, R extends GenericDAO<T>> {
 	@Autowired
 	R dao;
 	
@@ -44,6 +45,7 @@ public abstract class GenericService<T, R extends JpaRepository<T, Long>> {
 		if (!this.validar(item)) {
 			throw new FaltandoValoresException();
 		}
+		
 		dao.save(item);
 		
 		return true;

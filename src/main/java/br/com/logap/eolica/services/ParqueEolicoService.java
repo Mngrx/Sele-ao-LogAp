@@ -19,6 +19,7 @@ public class ParqueEolicoService extends GenericService<ParqueEolico, ParqueEoli
 		if (parque.getNome() != null
 				&& parque.getPotenciaInstalada() != null
 				&& complexoEolicoDAO.existsById(parque.getIdComplexoEolico())) {
+			System.out.println("AQUIII"+parque.getNome());
 			return true;
 		}
 		

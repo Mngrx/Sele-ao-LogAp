@@ -20,6 +20,8 @@ public class AerogeradorService extends GenericService<Aerogerador, AerogeradorD
 				&& aerogerador.getModelo() != null
 				&& parqueEolicoDAO.existsById(aerogerador.getIdParqueEolico())) {
 			
+			System.out.println("AQUIII"+aerogerador.getNome());
+			return true;
 		}
 		
 		return false;

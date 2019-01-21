@@ -4,21 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "parque_eolico")
-public class ParqueEolico implements Serializable{
+public class ParqueEolico extends GenericEntity implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(nullable = false, length = 9)
-	private Long id;
 	@Column(nullable = false, length = 45)
 	private String nome;
 	@Column(nullable = true)
@@ -29,13 +22,7 @@ public class ParqueEolico implements Serializable{
 	private Float potenciaInstalada;
 	@Column(nullable = false, name = "complexo_eolico_id")
 	private Long idComplexoEolico;
-
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
