@@ -1,4 +1,4 @@
-package br.com.logap.eolica.swagger;
+package br.com.logap.eolica.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,8 +30,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     return new ApiInfoBuilder()
         .title("Seleção estágio LogAp")
         .description("<strong>REST API sobre esquema eólico.</strong>"
-        		+ "<br/> Esta página funciona como documentação. Tentativa de operações através dela serão negadas, pois é necessário autenticar na API.")
-        .version("1.2")
+        		+ "<br/> Esta página funciona como documentação. <em>Tentativa de operações através daqui serão negadas, pois é necessário autenticar na API.</em>")
+        .version("1.1.1")
         .license("Apache License Version 2.0")
         .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
         .build();
