@@ -11,6 +11,6 @@ O projeto está hospedado no Heroku e pode ser acessado clicando [aqui](https://
 
 > [Acesso documentação da API](https://api-logap.herokuapp.com/)
 
-## Melhorias
+## Melhorias futuras
 * Criar módulo de registro de usuários para permissão de acesso a API
 * Mudar forma de encriptação de senha de acesso a API
