@@ -1,5 +1,6 @@
 package br.com.logap.eolica.resources;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.logap.eolica.domain.Aerogerador;
 import br.com.logap.eolica.domain.ParqueEolico;
 import br.com.logap.eolica.exceptions.FaltandoValoresException;
 import br.com.logap.eolica.exceptions.IdInvalidoException;
@@ -31,6 +33,7 @@ public class ParqueEolicoResources {
 	
 	@GetMapping
 	public ResponseEntity<List<ParqueEolico>> listarTodos() {
+				
 		return ResponseEntity.status(HttpStatus.OK)
 				.body(parqueEolicoService.listarTodos());
 	}
@@ -49,6 +52,16 @@ public class ParqueEolicoResources {
 			
 		}
 	}
+	
+	@GetMapping("/{id}/aerogerador")
+	public ResponseEntity<Optional<ArrayList<Aerogerador>>> obterAerogeradoresPeloIdParqueEolico(@PathVariable Long id) {
+		try {
+			return ResponseEntity.ok(parqueEolicoService.aerogeradoresPeloIdDoParqueEolico(id));
+		} catch (IdInvalidoException e) {
+			return ResponseEntity.badRequest().body(null);
+		}
+	}
+	
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Optional<ParqueEolico>> obterPeloId(@PathVariable Long id) {

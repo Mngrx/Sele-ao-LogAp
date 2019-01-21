@@ -1,5 +1,6 @@
 package br.com.logap.eolica.resources;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.logap.eolica.domain.ComplexoEolico;
+import br.com.logap.eolica.domain.ParqueEolico;
 import br.com.logap.eolica.exceptions.FaltandoValoresException;
 import br.com.logap.eolica.exceptions.IdInvalidoException;
 import br.com.logap.eolica.services.ComplexoEolicoService;
@@ -47,6 +49,15 @@ public class ComplexoEolicoResources {
 			return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE)
 					.body(complexoEolico);
 			
+		}
+	}
+	
+	@GetMapping("/{id}/parque-eolico")
+	public ResponseEntity<Optional<ArrayList<ParqueEolico>>> obterParqueEolicoPeloIdComplexoEolico(@PathVariable Long id) {
+		try {
+			return ResponseEntity.ok(complexoEolicoService.aerogeradoresPeloIdDoParqueEolico(id));
+		} catch (IdInvalidoException e) {
+			return ResponseEntity.badRequest().body(null);
 		}
 	}
 	
