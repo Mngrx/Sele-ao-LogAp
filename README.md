@@ -14,3 +14,4 @@ O projeto está hospedado no Heroku e pode ser acessado clicando [aqui](https://
 ## Melhorias futuras
 * Criar módulo de registro de usuários para permissão de acesso a API
 * Mudar forma de encriptação de senha de acesso a API
+* Utilizar um Banco de Dados que não seja em memória
