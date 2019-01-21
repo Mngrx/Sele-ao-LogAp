@@ -40,29 +40,29 @@ public abstract class GenericService<T, R extends JpaRepository<T, Long>> {
 	}
 	
 
-	public boolean cadastrar(T complexo) throws FaltandoValoresException {
-		if (!this.validar(complexo)) {
+	public boolean cadastrar(T item) throws FaltandoValoresException {
+		if (!this.validar(item)) {
 			throw new FaltandoValoresException();
 		}
-		dao.save(complexo);
+		dao.save(item);
 		
 		return true;
 	}
 	
 	
-	public T atualizarPeloId(Long id, T complexo) throws IdInvalidoException, FaltandoValoresException {
+	public T atualizarPeloId(Long id, T item) throws IdInvalidoException, FaltandoValoresException {
 		
 		if (id == null || id < 0 || !dao.existsById(id)) {
 			throw new IdInvalidoException();
 		}
 		
-		if (!this.validar(complexo)) {
+		if (!this.validar(item)) {
 			throw new FaltandoValoresException();
 		}
 		
-		return dao.save(complexo);
+		return dao.save(item);
 		
 	}
 	
-	public abstract boolean validar(T complexo);
+	public abstract boolean validar(T item);
 }

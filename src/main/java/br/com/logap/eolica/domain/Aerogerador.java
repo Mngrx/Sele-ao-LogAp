@@ -34,7 +34,52 @@ public class Aerogerador implements Serializable{
 	@Column(nullable = false, name = "parque_eolico_id")
 	private Long idParqueEolico;
 	
-	
-	
-
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public Float getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(Float latitude) {
+		this.latitude = latitude;
+	}
+	public Float getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(Float longitude) {
+		this.longitude = longitude;
+	}
+	public Float getAlturaTorre() {
+		return alturaTorre;
+	}
+	public void setAlturaTorre(Float alturaTorre) {
+		this.alturaTorre = alturaTorre;
+	}
+	public Float getDiametroVarredura() {
+		return diametroVarredura;
+	}
+	public void setDiametroVarredura(Float diametroVarredura) {
+		this.diametroVarredura = diametroVarredura;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public Long getIdParqueEolico() {
+		return idParqueEolico;
+	}
+	public void setIdParqueEolico(Long idParqueEolico) {
+		this.idParqueEolico = idParqueEolico;
+	}
 }
