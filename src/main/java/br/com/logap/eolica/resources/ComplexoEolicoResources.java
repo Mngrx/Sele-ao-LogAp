@@ -19,9 +19,11 @@ import br.com.logap.eolica.domain.ComplexoEolico;
 import br.com.logap.eolica.exceptions.FaltandoValoresException;
 import br.com.logap.eolica.exceptions.IdInvalidoException;
 import br.com.logap.eolica.services.ComplexoEolicoService;
+import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("/complexo-eolico")
+@Api(tags = "Complexo Eolico", description = "Operações relacionadas a Complexo Eolico")
 public class ComplexoEolicoResources {
 
 	@Autowired
