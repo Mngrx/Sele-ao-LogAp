@@ -25,6 +25,7 @@ A resposta recebida deve ser adicionada ao Header das demais requisições.
 * Criar módulo de registro de usuários para permissão de acesso a API
 * Mudar forma de encriptação de senha de acesso a API
 * Utilizar um Banco de Dados que não seja em memória
+* Documentação do código
 
 ## Agradecimentos
 
